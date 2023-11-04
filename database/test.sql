@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2023 at 05:19 AM
+-- Generation Time: Nov 04, 2023 at 06:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -24,24 +24,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mhs`
+-- Table structure for table `penumpang`
 --
 
-CREATE TABLE `mhs` (
+CREATE TABLE `penumpang` (
   `id` int(11) NOT NULL,
-  `nim` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `alamt` text NOT NULL
+  `pesawat` varchar(25) NOT NULL,
+  `kelas` varchar(25) NOT NULL,
+  `jml_tiket` int(3) NOT NULL,
+  `harga` int(20) NOT NULL,
+  `total` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `penumpang`
+--
+
+INSERT INTO `penumpang` (`id`, `nama`, `pesawat`, `kelas`, `jml_tiket`, `harga`, `total`) VALUES
+(4, 'Junto Alaihim', 'GRD', 'Bisnis', 3, 900000, 1800000),
+(6, 'Ikmilll', 'MPT', 'Ekonomi', 3, 400000, 800000);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `mhs`
+-- Indexes for table `penumpang`
 --
-ALTER TABLE `mhs`
+ALTER TABLE `penumpang`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -49,10 +60,10 @@ ALTER TABLE `mhs`
 --
 
 --
--- AUTO_INCREMENT for table `mhs`
+-- AUTO_INCREMENT for table `penumpang`
 --
-ALTER TABLE `mhs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `penumpang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
